@@ -1,4 +1,4 @@
-project-euler-ruby
+Ruby solutions to Project Euler problems
 ==================
 
-Ruby solutions to problems from projecteuler.net
+I'll be working through https://projecteuler.net to brush up on my Ruby skills, and posting my solutions here.
