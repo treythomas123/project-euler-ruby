@@ -10,7 +10,8 @@
 # | By considering the terms in the Fibonacci sequence whose values do not 
 # | exceed four million, find the sum of the even-valued terms.
 #
-# 
+# This solution creates an object representing the Fibonacci sequence, adds each
+# term to a running total if it's even, and stops at 4,000,000.
 #
 
 class FibonacciSequence  
