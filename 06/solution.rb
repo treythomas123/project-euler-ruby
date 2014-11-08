@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#/usr/bin/ruby
 
 # Solution to https://projecteuler.net/problem=6
 # Trey Thomas
