@@ -17,14 +17,13 @@
 class FibonacciSequence  
   def initialize
     @a = 1
-    @b = 2
+    @b = 1
   end
 
   def next
-    term = @a
+    previous = @a
     @a = @b
-    @b += term
-    return term
+    @b += previous
   end
 end
 
@@ -33,9 +32,7 @@ sequence = FibonacciSequence.new
 sum = 0
 
 until (term = sequence.next) > 4_000_000
-  if term.even?
-    sum += term
-  end
+  sum += term if term.even?
 end
 
 puts sum
