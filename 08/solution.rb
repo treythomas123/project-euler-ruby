@@ -29,8 +29,6 @@
 # |
 # | Find the thirteen adjacent digits in the 1000-digit number that have the
 # | greatest product. What is the value of this product?
-#
-#
 
 number = 
   "73167176531330624919225119674426574742355349194934" +
@@ -54,12 +52,13 @@ number =
   "05886116467109405077541002256983155200055935729725" +
   "71636269561882670428252483600823257530420752963450"
 
-max = 0
+greatest_product = 0
 
 (0..1000-13).each do |i|
-  product = number[i..i+12].split(//).reduce(1) {|product,d| product * d.to_i}
-  max = product if product > max
+  digits = number[i..i+12].scan(/./).map {|d| d.to_i}
+  product = digits.reduce(:*)
+  greatest_product = product if product > greatest_product
 end
 
-puts max
+puts greatest_product
 
