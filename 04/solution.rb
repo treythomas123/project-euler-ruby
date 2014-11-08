@@ -15,21 +15,21 @@
 
 class String
   def palindromic?
-    return self.to_s == self.to_s.reverse
+    self == self.reverse
   end
 end
 
-largest_palindrome_found = 0
+largest_palindrome = 0
 
 (100..999).each do |i|
   (100..999).each do |j|
     product = i * j
     
-    if product.to_s.palindromic? && product > largest_palindrome_found
-      largest_palindrome_found = product
+    if product.to_s.palindromic?
+      largest_palindrome = product if product > largest_palindrome
     end
   end
 end
 
-puts largest_palindrome_found
+puts largest_palindrome
 
