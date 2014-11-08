@@ -8,7 +8,8 @@
 # |
 # | What is the 10 001st prime number?
 #
-#
+# I could have used the Sieve of Eratosthenes or some other prime-finding 
+# algorithm, but why reinvent the wheel?
 
 require 'prime'
 
