@@ -13,15 +13,17 @@
 # divisible by 3 or 5.
 
 
-def multiple_of_3_or_5(num)
-  return num % 3 == 0 || num  % 5 == 0
+class Integer
+  def multiple_of_3_or_5?(num)
+    num % 3 == 0 || num  % 5 == 0
+  end
 end
 
 
 sum = 0
 
 (1..999).each do |i|
-  sum += i if multiple_of_3_or_5(i)
+  sum += i if i.multiple_of_3_or_5?
 end
 
 puts sum
