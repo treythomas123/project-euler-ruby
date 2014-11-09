@@ -13,7 +13,9 @@
 # | There exists exactly one Pythagorean triplet for which a + b + c = 1000.Find
 # | the product abc.
 #
-#
+# Not the most elegant solution, but I just tried every value from 1 to 1000
+# for a and b, checking whether the combination adds up to 1000 and is a 
+# Pythagorean triplet.
 
 (1..1000).each do |a|
   (1..1000).each do |b|
