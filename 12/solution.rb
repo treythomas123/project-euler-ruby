@@ -24,47 +24,11 @@
 # | What is the value of the first triangle number to have over five hundred
 # | divisors?
 #
-#
+# Generate triangle numbers, checking the divisors of each one until an element
+# is found with over 500 divisors.
 
-require 'set'
-require 'prime'
-
-
-class TriangleNumbers
-  attr_reader :current
-
-  def initialize
-    @current = 1
-    @increment = 1
-  end
-
-  def next
-    @increment += 1
-    @current += @increment
-  end
-end
-
-
-class Integer
-  def divisors
-    # Generate array of prime factors (including repeats)
-    prime_factorization = []
-    self.prime_division.each do |f| 
-      prime_factorization += [f[0]] * f[1]
-    end
-    
-    divisors = [1].to_set
-    
-    # Add each possible combination of factors multiplied together
-    (1..prime_factorization.size).each do |count| 
-      prime_factorization.combination(count).each do |combo|
-        divisors << combo.reduce(:*)
-      end
-    end
-
-    return divisors
-  end
-end
+require_relative 'triangle_numbers'
+require_relative 'divisors'
 
 
 gen = TriangleNumbers.new
