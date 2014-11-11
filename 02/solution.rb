@@ -14,19 +14,7 @@
 # term to a running total if it's even, and stops at 4,000,000.
 #
 
-class FibonacciSequence  
-  def initialize
-    @a = 1
-    @b = 1
-  end
-
-  def next
-    previous = @a
-    @a = @b
-    @b += previous
-  end
-end
-
+require_relative 'fibonacci_sequence'
 
 sequence = FibonacciSequence.new
 sum = 0
