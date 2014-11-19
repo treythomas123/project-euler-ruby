@@ -17,7 +17,7 @@
 # | Find the sum of all the numbers that can be written as the sum of fifth
 # | powers of their digits.
 #
-# Tried code-golfing this one. Can't seem to get it under 83 characters.
+# Code golf solution
 
-p (2..999999).select{|n|n.to_s.split('').reduce(0){|s,d|s+=d.to_i**5}==n}.reduce :+
+p (2..1e6).select{|n|n==eval("#{n}0".chars*'**5+')}.reduce:+
 
