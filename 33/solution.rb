@@ -17,6 +17,8 @@
 # | find the value of the denominator.
 #
 
+require 'prime'
+
 curiousFractions = []
 
 (1..9).each do |n|
@@ -31,5 +33,17 @@ curiousFractions = []
   end
 end
 
+p = [1,1]
+curiousFractions.each do |f|
+  p[0] *= f[0]
+  p[1] *= f[1]
+end
 
-# still need to find the product
+while 1
+  gcd = p[0].to_i.gcd(p[1].to_i)
+  p[0] /= gcd
+  p[1] /= gcd
+  break if gcd == 1
+end
+
+puts p[1].to_i
